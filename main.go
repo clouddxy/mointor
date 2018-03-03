@@ -1,10 +1,19 @@
 package main
 
 import (
-	"fmt"
+	"log"
+
+	"github.com/robfig/cron"
 )
 
 func main() {
-	fmt.Println("Deploy test.")
-	fmt.Println("Modify project.")
+	i := 0
+	c := cron.New()
+	spec := "*/3 * * * * ?"
+	c.AddFunc(spec, func() {
+		i++
+		log.Println("cron running:", i)
+	})
+	c.Start()
+	select {}
 }
