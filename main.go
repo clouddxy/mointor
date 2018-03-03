@@ -6,4 +6,5 @@ import (
 
 func main() {
 	fmt.Println("Deploy test.")
+	fmt.Println("Modify project.")
 }
